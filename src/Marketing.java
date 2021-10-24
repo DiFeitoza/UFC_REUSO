@@ -17,4 +17,13 @@ public abstract class Marketing {
             out.update(this);
         }
     }
+
+    public void notifyOutdoor(String city){
+        for(Outdoor out : outdoors){
+            OutdoorPrime op = (OutdoorPrime) out;
+            if(op.getLocation().equals(city)){
+                out.update(this);
+            }
+        }
+    }
 }

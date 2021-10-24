@@ -1,12 +1,15 @@
 public class OutdoorPrime implements Outdoor {
     private int id;
     private String location;
-    private String content = "";
+    private String content = "null";
 
-    OutdoorPrime(int id, String location, String content){
+    OutdoorPrime(int id, String location){
         this.id = id;
         this.location = location;
-        this.content = content;
+    }
+
+    public String getLocation(){
+        return location;
     }
 
     public void setContent(String content){
@@ -17,12 +20,11 @@ public class OutdoorPrime implements Outdoor {
     public void update(Marketing marketing) {
         MarketingData mkd = (MarketingData) marketing;
         this.setContent(mkd.getCampaign());
-        System.out.println(this.toString()); 
     }
 
     @Override
     public String toString() {
-        return id + " - " + location + "\n" + content + "\n";
+        return "Outdoor " + id + " - " + location + "\n" + "Conteúdo: " + content + "\n";
     }
     
 }
